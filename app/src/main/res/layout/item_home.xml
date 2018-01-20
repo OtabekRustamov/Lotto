@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivItemHome"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/timings" />
+
+    <TextView
+        android:id="@+id/tvItemTimeHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/itemTvDescription"
+        android:text="07:36:49"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="-3dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemTvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/itemTvHomeName"
+        android:layout_marginLeft="50dp"
+        android:text="do rozigrisha"
+        android:textSize="10sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemTvHomeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/itemBntHome"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="7dp"
+        android:text="SuperPriz"
+        android:textColor="@android:color/white"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/itemBntHome"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/shape_registr"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="ORLANDO"
+        android:textColor="@android:color/white" />
+</RelativeLayout>

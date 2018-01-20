@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        activeColor="#e2ed08"
+        badgeBackgroundColor="#FF0000"
+        badgeHidesWhenActive="true"
+        barColorWhenSelected="#FFFF"
+        icon="@drawable/ic_perm_identity"
+        id="@+id/play"
+        inActiveColor="#2a2b2a"
+        title="Play" />
+    <tab
+        activeColor="#e2ed08"
+        badgeBackgroundColor="#FF0000"
+        badgeHidesWhenActive="true"
+        barColorWhenSelected="#FFFF"
+        icon="@drawable/ic_perm_identity"
+        id="@+id/how_to_play"
+        inActiveColor="#2a2b2a"
+        title="How to play" />
+    <tab
+        activeColor="#e2ed08"
+        badgeBackgroundColor="#FF0000"
+        badgeHidesWhenActive="true"
+        barColorWhenSelected="#FFFF"
+        icon="@drawable/ic_perm_identity"
+        id="@+id/archive"
+        inActiveColor="#2a2b2a"
+        title="Archive" />
+    <tab
+        activeColor="#e2ed08"
+        badgeBackgroundColor="#FF0000"
+        badgeHidesWhenActive="true"
+        barColorWhenSelected="#FFFF"
+        icon="@drawable/ic_perm_identity"
+        id="@+id/winner"
+        inActiveColor="#2a2b2a"
+        title="Winner" />
+    <!--<tab-->
+        <!--activeColor="#e2ed08"-->
+        <!--badgeBackgroundColor="#FF0000"-->
+        <!--badgeHidesWhenActive="true"-->
+        <!--barColorWhenSelected="#FFFF"-->
+        <!--icon="@drawable/ic_perm_identity"-->
+        <!--id="@+id/tab_more"-->
+        <!--inActiveColor="#2a2b2a"-->
+        <!--title="asosiy" />-->
+</tabs>

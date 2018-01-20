@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="155dp"
+    android:background="@color/white"
+    android:paddingBottom="3dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="3dp"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/itemiIvWinner"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_perm_identity" />
+
+    <TextView
+        android:id="@+id/itemTvWinnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemiIvWinner"
+        android:gravity="center"
+        android:text="Davron Abdullayev"
+        android:textColor="#2d2d2d"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemWinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemTvWinnerName"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Winner"
+        android:textColor="#898989"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemWinnerAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemWinner"
+        android:gravity="center"
+        android:text="70 990 520 Sum"
+        android:textColor="#898989"
+        android:textSize="15sp" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@id/itemWinnerAmount" />
+
+</RelativeLayout>

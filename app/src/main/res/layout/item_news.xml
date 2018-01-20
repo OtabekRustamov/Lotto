@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/itemImvNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/timings" />
+
+    <TextView
+        android:id="@+id/itemTvITime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#23000000"
+        android:padding="5dp"
+        android:text="25.11.2017"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/itemBntNews"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/spacer"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttonshape_item_news"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:padding="9dp"
+        android:text="     Sharqona Lotto      "
+        android:textAllCaps="false" />
+
+    <Space
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:layout_below="@id/itemImvNews" />
+
+    <TextView
+        android:id="@+id/itemTvNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:text="sdfksgjdkfjgskdj"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/itemTvNewsPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemTvNews"
+        android:text=",mnsd,sdfg,sndfgksjdfkgjs"
+        android:textStyle="italic" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/itemTvNewsPrice"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/itemBtnNewsMore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_edit_text"
+        android:backgroundTint="@color/Yellow"
+        android:text="More"
+        android:visibility="gone" />
+</RelativeLayout>

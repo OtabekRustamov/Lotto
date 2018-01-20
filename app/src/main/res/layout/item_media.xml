@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:background="#FFFF"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--<VideoView-->
+            <!--android:id="@+id/itemVv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp" />-->
+
+            <ImageView
+                android:id="@+id/itemIvMedia"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/timings" />
+
+            <TextView
+                android:id="@+id/itemtvTime"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#c5535353"
+                android:gravity="center"
+                android:text="25:11"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_play_circle_outline" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/itemtvTiraj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spacer"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:text="sdfksgjdkfjgskdj"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/itemtvHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemTvNews"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:text="3 hours"
+            android:textColor="#848484"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/itemtvSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            android:text="44.37 MB"
+            android:textColor="#848484"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/itemTvNewsPrice"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/darker_gray" />
+
+
+</LinearLayout>
