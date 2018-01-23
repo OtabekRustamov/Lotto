@@ -62,7 +62,7 @@ public class AppModule {
                         Request request = chain.request();
 
                         Request.Builder builder = request.newBuilder()
-                                .header("Content-Type", "application/x-www-form-urlencoded")
+                                .header("Content-Type", "application/json")
 //                                .header("Content-Type", "application/x-www-form-urlencoded; text/html; charset=UTF-8")
                                 .method(request.method(), request.body());
                         return chain.proceed(builder.build());

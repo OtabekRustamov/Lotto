@@ -51,7 +51,7 @@ public class NotificationFragment extends BaseFragment implements FragmentMessag
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                makeToast("click "+position);
+                makeToast("click " + position);
             }
         });
     }

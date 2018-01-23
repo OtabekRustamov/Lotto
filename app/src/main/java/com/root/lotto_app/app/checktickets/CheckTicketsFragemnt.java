@@ -1,6 +1,5 @@
 package com.root.lotto_app.app.checktickets;
 
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -51,6 +50,7 @@ public class CheckTicketsFragemnt extends BaseFragment implements CheckTicketsFr
             "1", "2", "3", "4", "5", "6", "7", "8", "9",
             "1", "2", "3", "4", "5", "6", "7", "8", "9"
     };
+
     @Override
     protected int getLayoutId() {
         return R.layout.fragmnet_check_ticket;
@@ -62,12 +62,13 @@ public class CheckTicketsFragemnt extends BaseFragment implements CheckTicketsFr
         ervCheckTicket.setAdapter(adapter = new RecyclerArrayAdapter(getContext()) {
             @Override
             public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-                return new HolderCheckTicket(parent,R.layout.item_check_ticket);
+                return new HolderCheckTicket(parent, R.layout.item_check_ticket);
             }
         });
         adapter.addAll(numbers);
     }
-// 29 5 4
+
+    // 29 5 4
     @Override
     public void checkLotto() {
 

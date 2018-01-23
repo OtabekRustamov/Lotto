@@ -69,6 +69,7 @@ public class RegistrationFragment extends BaseFragment implements RegistrationFr
         presenter.getMail();
     }
 
+
     @Override
     public void checkInfo() {
         // todo checkInfo weather infos correct or not

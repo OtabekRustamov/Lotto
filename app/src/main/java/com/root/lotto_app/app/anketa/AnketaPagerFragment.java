@@ -56,7 +56,8 @@ public class AnketaPagerFragment extends BaseFragment {
                 case 2: {
                     fragment = new TicketFragment();
                     break;
-                }case 3:{
+                }
+                case 3: {
                     fragment = new ArchiveFragment();
                     break;
                 }

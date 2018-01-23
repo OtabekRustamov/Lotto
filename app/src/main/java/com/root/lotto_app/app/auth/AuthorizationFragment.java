@@ -53,7 +53,7 @@ public class AuthorizationFragment extends BaseFragment implements AuthPresenter
 
     @Override
     protected void init() {
-        arrayAdapter = new ArrayAdapter(getContext(),android.R.layout.simple_spinner_item,phoneNumers);
+        arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, phoneNumers);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spMobile.setAdapter(arrayAdapter);
     }

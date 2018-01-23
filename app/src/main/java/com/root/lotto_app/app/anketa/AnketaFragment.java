@@ -33,4 +33,5 @@ public class AnketaFragment extends BaseFragment {
     protected void init() {
 
     }
+
 }

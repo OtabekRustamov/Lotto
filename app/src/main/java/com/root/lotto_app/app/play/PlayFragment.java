@@ -50,6 +50,7 @@ public class PlayFragment extends BaseFragment implements FragmentWinnerPresente
         adapter.addAll(numbers);
     }
 
+
     @Override
     public void setInfor(List<String> infor) {
     }

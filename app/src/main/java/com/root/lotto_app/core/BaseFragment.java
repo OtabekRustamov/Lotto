@@ -32,7 +32,9 @@ public abstract class BaseFragment extends DaggerFragment implements BaseView {
         return rootView;
     }
 
-    protected abstract @LayoutRes int getLayoutId();
+    protected abstract @LayoutRes
+    int getLayoutId();
+
     protected abstract void init();
 
     public void showLoading() {

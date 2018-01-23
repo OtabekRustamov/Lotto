@@ -21,6 +21,7 @@ public class FragmentOltinBaliq extends BaseFragment implements FragmentOltinBal
 
     }
 
+
     @Override
     public void checkOltinBaliq() {
 

@@ -40,8 +40,6 @@ public class HomeFragment extends BaseFragment implements HomeFragmentPresenterV
     MainActivity mainActivity;
     @BindView(R.id.ervHomeFragment)
     EasyRecyclerView ervHomeFragment;
-    @BindView(R.id.ivSuperPrice)
-    ImageView ivSuperPrice;
     private RecyclerArrayAdapter adapter;
     private List<HomeModel> homes;
 
@@ -52,15 +50,18 @@ public class HomeFragment extends BaseFragment implements HomeFragmentPresenterV
 
     @Override
     protected void init() {
-        Glide
-                .with(getActivity())
-                .load("http://zamonaviy.com/_nw/199/04016127.jpg")
-                .into(ivSuperPrice);
         ervHomeFragment.setLayoutManager(new LinearLayoutManager(getContext()));
         ervHomeFragment.setAdapter(adapter = new RecyclerArrayAdapter(getContext()) {
             @Override
             public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-                return new ItemHomeHolder(parent, R.layout.item_home);
+                return new ItemHomeHolder(parent, viewType == 0 ? R.layout.item_home : R.layout.item_home2);
+            }
+
+            @Override
+            public int getViewType(int position) {
+                // 0 or 1
+//                if ()
+                return ((HomeModel) getItem(position)).getSuper_prize() == null ? 0 : 1;
             }
         });
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
@@ -78,44 +79,5 @@ public class HomeFragment extends BaseFragment implements HomeFragmentPresenterV
     public void setImagess(List<HomeModel> images) {
         this.homes = images;
         adapter.addAll(images);
-    }
-
-
-    public class ViewPagerAdapter extends PagerAdapter {
-        private Context context;
-        LayoutInflater layoutInflater;
-        public ArrayList<String> mImageUrls;
-
-
-        public ViewPagerAdapter(Context context, ArrayList<String> mImageUrls) {
-            this.context = context;
-            this.mImageUrls = mImageUrls;
-        }
-
-        @Override
-        public int getCount() {
-            return mImageUrls.size();
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            layoutInflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View itemView = layoutInflater.inflate(R.layout.item_gallery_image, container,
-                    false);
-            imageView = itemView.findViewById(R.id.item_gallery);
-            return itemView;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            ((ViewPager) container).removeView((View) object);
-        }
-
-        @Override
-        public boolean isViewFromObject(View view, Object object) {
-            return view == object;
-        }
-
     }
 }

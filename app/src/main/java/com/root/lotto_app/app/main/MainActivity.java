@@ -7,6 +7,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -54,7 +55,8 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
     LinearLayout llArchive;
     @BindView(R.id.llSetting)
     LinearLayout llSetting;
-
+    @BindView(R.id.itemToolbar)
+    ImageView itemToolbar;
     @BindView(R.id.bottomBar)
     BottomBar bottomBar;
 
@@ -85,7 +87,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
         bottomBar.setOnTabSelectListener(this);
     }
 
-    @OnClick(value = {R.id.llTicket, R.id.llArchive, R.id.llSetting, R.id.llExit, R.id.llNews, R.id.llMedia, R.id.llWhereBuy, R.id.llNotification, R.id.llWinner, R.id.llAnketa})
+    @OnClick(value = {R.id.itemToolbar, R.id.llTicket, R.id.llArchive, R.id.llSetting, R.id.llExit, R.id.llNews, R.id.llMedia, R.id.llWhereBuy, R.id.llNotification, R.id.llWinner, R.id.llAnketa})
     public void OnClickLL(View view) {
         switch (view.getId()) {
             case R.id.llAnketa: {
@@ -151,8 +153,11 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
                 replaceFragment(new FragmentWinner());
                 break;
             }
+            case R.id.itemToolbar: {
+                Toast.makeText(this, "Toolbar item", Toast.LENGTH_SHORT).show();
+                break;
+            }
         }
-
     }
 
     public void replaceFragment(Fragment fragment) {

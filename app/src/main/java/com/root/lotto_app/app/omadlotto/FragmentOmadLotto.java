@@ -2,17 +2,24 @@ package com.root.lotto_app.app.omadlotto;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.itsronald.widget.ViewPagerIndicator;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
@@ -23,8 +30,11 @@ import com.root.lotto_app.app.omadlotto.model.holder.HolderWinnerList;
 import com.root.lotto_app.core.BaseFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
+
+import static com.root.lotto_app.R.layout.item_omadlotto_viewpager;
 
 /**
  * Created by root on 1/8/18.
@@ -55,9 +65,14 @@ public class FragmentOmadLotto extends BaseFragment {
     TextView tvRrize;
     @BindView(R.id.bntAmount)
     Button bntAmount;
+    @BindView(R.id.view_pager_indicator)
+    ViewPagerIndicator indicator;
     RecyclerArrayAdapter adapter;
     RecyclerArrayAdapter adapter1;
     RecyclerArrayAdapter adapter2;
+
+    private List<String> list;
+    private ViewPagerAdapter pager;
 
     @Override
     protected int getLayoutId() {
@@ -75,8 +90,22 @@ public class FragmentOmadLotto extends BaseFragment {
     @Override
 
     protected void init() {
-//        ViewpagerAdapter pager = new ViewpagerAdapter();
-//        vpOmadLottoFragment.setAdapter(pager)
+
+//        final ViewPager.LayoutParams layoutParams = new ViewPager.LayoutParams();
+//        layoutParams.width = ViewPager.LayoutParams.MATCH_PARENT;
+//        layoutParams.height = ViewPager.LayoutParams.WRAP_CONTENT;
+//        layoutParams.gravity = Gravity.BOTTOM;
+//
+//        final ViewPagerIndicator indicator = new ViewPagerIndicator(getContext());
+//        vpOmadLottoFragment.addView(indicator, layoutParams);
+
+        list = new ArrayList<>();
+        list.add("http://zamonaviy.com/_nw/199/04016127.jpg");
+        list.add("http://zamonaviy.com/_nw/199/04016127.jpg");
+        list.add("http://zamonaviy.com/_nw/199/04016127.jpg");
+        pager = new ViewPagerAdapter();
+        vpOmadLottoFragment.setAdapter(pager);
+
         rvOmadLottoFragment.setLayoutManager(new LinearLayoutManager(getContext()));
         rvOmadLottoFragment.setAdapter(adapter = new RecyclerArrayAdapter(getContext()) {
             @Override
@@ -102,87 +131,41 @@ public class FragmentOmadLotto extends BaseFragment {
         adapter1.addAll(osNameListENG);
         adapter2.addAll(new Integer[]{60000, 60000, 60000, 70000, 60000, 132456});
         adapter.addAll(new Integer[]{20, 20, 20});
+//        indicator.
     }
 
-//    class ViewpagerAdapter extends PagerAdapter {
-//
-//        @NonNull
-//        public Object instantiateItem(View collection, int position) {
-//
-//            int resId = 0;
-//            switch (position) {
-//                case 0:
-//                    resId = R.id.page_one;
-//                    break;
-//                case 1:
-//                    resId = R.id.page_two;
-//                    break;
-//            }
-//            return findViewById(resId);
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return 2;
-//        }
-//
-//        @Override
-//        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
-//            return view == ((View) object);
-//        }
-//    }
-//    public class ViewPagerAdapter extends PagerAdapter {
-//        private Context context;
-//        LayoutInflater layoutInflater;
-//        public ArrayList<String> mImageUrls;
-//
-//
-//        public ViewPagerAdapter(Context context, ArrayList<String> mImageUrls) {
-//            this.context = context;
-//            this.mImageUrls = mImageUrls;
-//        }
-//
-//        @Override
-//        public int getCount() {
-//            return mImageUrls.size();
-//        }
-//
-//        @Override
-//        public Object instantiateItem(ViewGroup container, int position) {
-//            PhotoView imageView;
-//            final ProgressBar pagerProgress;
-//            layoutInflater = (LayoutInflater) context
-//                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//            View itemView = layoutInflater.inflate(R.layout.item_gallery_image, container,
-//                    false);
-//            imageView = itemView.findViewById(R.id.item_gallery);
-//            pagerProgress = itemView.findViewById(R.id.pagerProgress);
-//            Picasso.with(context)
-//                    .load(mImageUrls.get(position))
-//                    .into(imageView, new Callback() {
-//                        @Override
-//                        public void onSuccess() {
-//                            pagerProgress.setVisibility(View.GONE);
-//                        }
-//
-//                        @Override
-//                        public void onError() {
-//                            pagerProgress.setVisibility(View.VISIBLE);
-//                        }
-//                    });
-//            ((ViewPager) container).addView(itemView);
-//            return itemView;
-//        }
-//
-//        @Override
-//        public void destroyItem(ViewGroup container, int position, Object object) {
-//            ((ViewPager) container).removeView((View) object);
-//        }
-//
-//        @Override
-//        public boolean isViewFromObject(View view, Object object) {
-//            return view == object;
-//        }
-//
-//    }
+    public class ViewPagerAdapter extends android.support.v4.view.PagerAdapter {
+        LayoutInflater layoutInflater;
+
+
+        @Override
+        public int getCount() {
+            return list.size();
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            ImageView imageView;
+            layoutInflater = (LayoutInflater) getContext()
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            View itemView = layoutInflater.inflate(R.layout.item_omadlotto_viewpager, container,
+                    false);
+            imageView = itemView.findViewById(R.id.itemIvViewPagerOmadLotto);
+            Glide.with(getContext()).load(list.get(position)).into(imageView);
+            container.addView(itemView);
+
+            return itemView;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            container.removeView((View) object);
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return view == object;
+        }
+
+    }
 }

@@ -17,35 +17,15 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/vpOmadLottoFragment"
                 android:layout_width="match_parent"
-                android:layout_height="120dp">
+                android:layout_height="150dp"
+                android:layout_alignWithParentIfMissing="true">
 
-                <LinearLayout
-                    android:id="@+id/page_one"
+                <com.itsronald.widget.ViewPagerIndicator
+                    android:id="@+id/view_pager_indicator"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="PAGE ONE IN"
-                        android:textColor="#fff"
-                        android:textSize="24dp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/page_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="PAGE TWO IN"
-                        android:textColor="#fff"
-                        android:textSize="24dp" />
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:gravity="center_vertical" />
 
             </android.support.v4.view.ViewPager>
 

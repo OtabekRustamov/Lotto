@@ -35,7 +35,7 @@ import butterknife.OnClick;
  * Created by root on 1/15/18.
  */
 
-public class GameArchiveFragment extends BaseFragment implements GameFragmentPresenterView,DatePickerDialog.OnDateSetListener{
+public class GameArchiveFragment extends BaseFragment implements GameFragmentPresenterView, DatePickerDialog.OnDateSetListener {
 
     @BindView(R.id.ervGameArchive)
     EasyRecyclerView ervGameArchive;
@@ -66,7 +66,7 @@ public class GameArchiveFragment extends BaseFragment implements GameFragmentPre
     protected void init() {
         calendar = Calendar.getInstance();
         dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Locale.getDefault());
-       // timeFormat = new SimpleDateFormat(TIME_Pa)
+        // timeFormat = new SimpleDateFormat(TIME_Pa)
 
         ervGameArchive.setLayoutManager(new LinearLayoutManager(getContext()));
         ervGameArchive.setAdapter(adapter1 = new RecyclerArrayAdapter(getContext()) {

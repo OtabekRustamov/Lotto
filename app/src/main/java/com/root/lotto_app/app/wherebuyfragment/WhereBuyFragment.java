@@ -7,7 +7,7 @@ import com.root.lotto_app.core.BaseFragment;
  * Created by root on 1/4/18.
  */
 
-public class WhereBuyFragment extends BaseFragment implements WherebuyFragmentView{
+public class WhereBuyFragment extends BaseFragment implements WherebuyFragmentView {
 
     @Override
     protected int getLayoutId() {

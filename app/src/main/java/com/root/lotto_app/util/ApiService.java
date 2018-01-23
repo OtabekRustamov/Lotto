@@ -21,7 +21,7 @@ public interface ApiService {
     @POST("")
     Single<Boolean> getPrise(long priseId);
 
-    @GET("/lottery")
+    @GET("/api/lottery")
     Observable<List<HomeModel>> getHome();
 
     @GET("/photos")
